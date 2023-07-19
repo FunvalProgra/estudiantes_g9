@@ -1,5 +1,6 @@
 const form = document.querySelector("#form");
 const tbody = document.querySelector("#tbody");
+const filterForm = document.querySelector("#filter");
 
 let estudiantes = [];
 
@@ -31,6 +32,17 @@ form.addEventListener("submit", (event) => {
   form.reset();
   form.name.focus();
 });
+
+/* Evento Filtro */
+filterForm.addEventListener("input", () => {
+
+  // filtramos el array  y obtengo uno ya filtrado
+  let filtered = estudiantes.filter( estudiante => estudiante.name.toLowerCase().includes(filterForm.value.toLowerCase()) );
+
+  generateTable(filtered);
+
+})
+
 
 function generateTable(estudiantes) {
   tbody.innerHTML = "";
