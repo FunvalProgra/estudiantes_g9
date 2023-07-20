@@ -67,7 +67,7 @@ function createRow(estudiante, idx) {
 }
 
 function deleteStudent(id) {
-  // estudiantes = estudiantes.filter( estudiante => estudiante.id != id);
+  // estudiantes = estudiantes.filter( estudiante => estudiante.id != id); // antigua forma por id
   estudiantes.splice(id,1);
 
   setLocal();
